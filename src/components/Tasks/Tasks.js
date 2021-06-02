@@ -9,7 +9,15 @@ export default function Tasks() {
   return (
     <List divided verticalAlign="middle">
       {tasks?.map((task) => {
-        return <Task id={task.id} title={task.title} status={task.status} />;
+        return (
+          <Task
+            id={task.id}
+            title={task.title}
+            status={task.status}
+            key={task.id}
+            date={task.dueDate}
+          />
+        );
       })}
     </List>
   );
